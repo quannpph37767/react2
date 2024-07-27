@@ -74,6 +74,10 @@ export const updateProduct = async (req, res) => {
         message: "Cap nhap san pham that bai",
       });
     }
+    return res.status(201).json({
+      message: "Update sản phẩm thành công",
+      data: product,
+    });
   } catch (error) {
     return res.status(500).json({
       message: error.message,
