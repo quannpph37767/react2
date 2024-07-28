@@ -10,9 +10,13 @@ const ListProduct = () => {
     useContext<ProductContextType>(ProductContext);
   return (
     <div>
-        <h2 className="text-[30px] font-bold m-6">Admin Dashboard</h2>
+      <h2 className="text-[30px] font-bold m-6">Admin Dashboard</h2>
 
-        <Link to={`/add`}><button>Add Product</button></Link>
+      <Link to={`/add`}>
+        <button className="m-[20px] bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+          Add Product
+        </button>
+      </Link>
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
@@ -47,7 +51,7 @@ const ListProduct = () => {
                 ${item.price}
               </td>
               <td className="py-2 px-4 border-b border-gray-300">
-                <img src={item.image} alt="" className="w-[80px] h-[80px]"/>
+                <img src={item.image} alt="" className="w-[80px] h-[80px]" />
               </td>
               <td className="py-2 px-4 border-b border-gray-300">
                 {item.description}

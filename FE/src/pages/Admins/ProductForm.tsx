@@ -9,8 +9,8 @@ import { instance } from "../../apis";
 
 
 const ProductForm = () => {
-  const { onSubmitProduct } = useContext<ProductContextType>(ProductContext);
-  const { id } = useParams<{_id: string}>(); // Đảm bảo _id được truy xuất đúng cách
+  const { onSubmitProduct , } = useContext<ProductContextType>(ProductContext);
+  const { id } = useParams<{id: string}>(); // Đảm bảo _id được truy xuất đúng cách
 
   const {
     register,
@@ -31,9 +31,9 @@ const ProductForm = () => {
   }, [id, reset]);
 
   return (
-    <div>
+    <div className="mt-[50px]">
       <form
-        onSubmit={handleSubmit((data) => onSubmitProduct({ ...data,  }))}
+        onSubmit={handleSubmit((data) => onSubmitProduct({ ...data, _id : id }))}
         className="max-w-lg mx-auto p-6 bg-white rounded shadow-md"
       >
         <h1 className="text-2xl font-bold mb-6">
